@@ -29,7 +29,6 @@ public class CatchingStuffs extends ApplicationAdapter {
 	private Sound GetTheCam;
 	private Sound Dota;
 	private Sound faker;
-	private Sound GameOver;
 	private Rectangle bucket;
 	private Array<Rectangle> pepes;
 	private long lastDropTime;
@@ -92,7 +91,6 @@ public class CatchingStuffs extends ApplicationAdapter {
 		GetTheCam = Gdx.audio.newSound(Gdx.files.internal("GetTheCam.mp3"));
 		Dota = Gdx.audio.newSound(Gdx.files.internal("Dota.mp3"));
 		faker = Gdx.audio.newSound(Gdx.files.internal("faker.mp3"));
-		GameOver = Gdx.audio.newSound(Gdx.files.internal("GameOver.mp3"));
 		
 		//actually create stuffs
 			//bucket
@@ -232,7 +230,6 @@ public class CatchingStuffs extends ApplicationAdapter {
 		Iterator<Rectangle> iterr = angrypepes.iterator();
 		while(iterr.hasNext()) {
 			if(health <= 0 ) {
-				GameOver.play();
 				health = 0;
 				bgMusic.pause();
 				break;
